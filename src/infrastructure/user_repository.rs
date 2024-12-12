@@ -1,3 +1,5 @@
+// src/infrastructure/user_repository.rs
+
 use crate::domain::user::User;
 use sqlx::postgres::PgPoolOptions;
 use sqlx::Pool;
@@ -5,6 +7,7 @@ use sqlx::Postgres;
 use dotenv::dotenv;
 use std::env;
 use async_trait::async_trait;
+use uuid::Uuid; // 追加
 
 #[async_trait]
 pub trait UserRepositoryTrait {

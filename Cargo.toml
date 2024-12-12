@@ -3,13 +3,16 @@ name = "inventory_system"
 version = "0.1.0"
 edition = "2021"  # または "2018"
 
+# バイナリターゲットが明示的に指定されている場合
+[[bin]]
+name = "inventory_system"
+path = "src/main.rs"
+
 [dependencies]
 actix-web = "4"
-tokio = { version = "1", features = ["full"] }
-serde = { version = "1.0", features = ["derive"] }
-serde_json = "1.0"
-sqlx = { version = "0.6", features = ["postgres", "runtime-tokio-native-tls", "macros"] }
 dotenv = "0.15"
-uuid = { version = "1", features = ["serde", "v4"] }
+env_logger = "0.10"
+sqlx = { version = "0.7", features = ["postgres", "runtime-tokio-native-tls", "macros", "uuid"] }
 async-trait = "0.1"
-env_logger = "0.10"  # 追加
+serde = { version = "1.0", features = ["derive"] }
+uuid = { version = "1", features = ["serde", "v4"] }
